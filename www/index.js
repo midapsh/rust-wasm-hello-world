@@ -23,34 +23,34 @@ canvas.width = (CELL_SIZE + CELL_BORDER_SIZE) * width + 1;
 const ctx = canvas.getContext('2d');
 
 const drawGrid = () => {
-  ctx.beginPath();
-  ctx.strokeStyle = GRID_COLOR;
+    ctx.beginPath();
+    ctx.strokeStyle = GRID_COLOR;
 
-  // Vertical lines.
-  for (let i = 0; i <= width; i++) {
-    ctx.moveTo(
-        i * (CELL_SIZE + CELL_BORDER_SIZE) + 1,
-        0,
-    );
-    ctx.lineTo(
-        i * (CELL_SIZE + CELL_BORDER_SIZE) + 1,
-        (CELL_SIZE + CELL_BORDER_SIZE) * height + 1,
-    );
-  }
+    // Vertical lines.
+    for (let i = 0; i <= width; i++) {
+        ctx.moveTo(
+            i * (CELL_SIZE + CELL_BORDER_SIZE) + 1,
+            0,
+        );
+        ctx.lineTo(
+            i * (CELL_SIZE + CELL_BORDER_SIZE) + 1,
+            (CELL_SIZE + CELL_BORDER_SIZE) * height + 1,
+        );
+    }
 
-  // Horizontal lines.
-  for (let j = 0; j <= height; j++) {
-    ctx.moveTo(
-        0,
-        j * (CELL_SIZE + CELL_BORDER_SIZE) + 1,
-    );
-    ctx.lineTo(
-        (CELL_SIZE + CELL_BORDER_SIZE) * width + 1,
-        j * (CELL_SIZE + CELL_BORDER_SIZE) + 1,
-    );
-  }
+    // Horizontal lines.
+    for (let j = 0; j <= height; j++) {
+        ctx.moveTo(
+            0,
+            j * (CELL_SIZE + CELL_BORDER_SIZE) + 1,
+        );
+        ctx.lineTo(
+            (CELL_SIZE + CELL_BORDER_SIZE) * width + 1,
+            j * (CELL_SIZE + CELL_BORDER_SIZE) + 1,
+        );
+    }
 
-  ctx.stroke();
+    ctx.stroke();
 }
 
 const getIndex = (row, column) => {
@@ -83,6 +83,7 @@ const drawCells = () => {
 };
 
 const renderLoop = () => {
+    debugger;
     universe.tick();
 
     drawGrid();
